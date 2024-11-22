@@ -1109,6 +1109,17 @@
                 "id": 1,
                 "name": "new-passport",
                 "title": "New Passport",
+                "visaInformation": {
+                    "visaType": "Normal",
+                    "lengthOfStay": "within 10 days",
+                    "validity": "3 years",
+                    "entry": "Multiple",
+                    "entryprice":100
+                },
+                "countryImages": [
+                    "/city/passport.jpg"
+                   
+                ],
                 "pricing": [
                     {
                         "id": 1,
@@ -1126,13 +1137,61 @@
                     "For a regular passport application, we provide comprehensive support with documentation and processing. Our team ensures a smooth experience, assisting you through each step to ensure timely."
                 ],
                 "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Citizenship Proof",
-                    "Passport Photo",
-                    "Fee Payment",
-                    "Parental Consent (if under 18)"
+                    {
+                        "id": 1,
+                        "name":"Photo ID Proof",
+                        "container":[
+                            {
+                                "id": 1,
+                                "name":"Aadhar Card"
+                            },
+                            {
+                                "id": 1,
+                                "name":"Pan Card"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name":"DOB Proof",
+                        "container":[
+                            {
+                                "id": 2,
+                                "name":"Birth Certificate"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name":"Address Proof",
+                        "container":[
+                            {
+                                "id": 3,
+                                "name":"Light Bill"
+                            },
+                            {
+                                "id": 3,
+                                "name":"Bank Passbook"
+                            },
+                            {
+                                "id": 3,
+                                "name":"Aadhar Card "
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "NON-ECR Proof",
+                        "container":[
+                            {
+                                "id": 4,
+                                "name":"Marksheet"
+                                
+                            }
+                        ]
+                    }
                 ]
+              
             },
             {
                 "id": 2,
