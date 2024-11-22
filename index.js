@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import detailroute from "./routes/detailroute.js"
 import contactroute from "./routes/contactroute.js"
 import datas from "./routes/Api/data.js"
+import faq from "./routes/Api/faq.js"
+import reviews from "./routes/Api/reviews.js"
 
 dotenv.config();
 const app = express();
@@ -19,6 +21,8 @@ mongoose
   .catch((err) => console.log("mongo error", err));
 
 app.use('/', datas)
+app.use('/',faq)
+app.use('/', reviews)
 app.use('/', contactroute)
 app.use('/', detailroute)
 
