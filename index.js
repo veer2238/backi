@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import detailroute from "./routes/detailroute.js"
+import contactroute from "./routes/contactroute.js"
 import datas from "./routes/Api/data.js"
 
 dotenv.config();
@@ -18,6 +19,7 @@ mongoose
   .catch((err) => console.log("mongo error", err));
 
 app.use('/', datas)
+app.use('/', contactroute)
 app.use('/', detailroute)
 
 
