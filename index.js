@@ -11,8 +11,16 @@ import datas from "./routes/Api/data.js"
 import faq from "./routes/Api/faq.js"
 import reviews from "./routes/Api/reviews.js"
 
+
+import path from "path";  // Ensure this is the path module
+import { fileURLToPath } from "url";  // For static file serving
 dotenv.config();
 const app = express();
+
+// // Static file serving (serves files from the uploads folder)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(cors());
 app.use(express.json());
