@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import detailroute from "./routes/detailroute.js"
 import contactroute from "./routes/contactroute.js"
 import Inquiryroute from "./routes/Inquiryroute.js"
+import newsletterroute from  "./routes/newsletterroute.js"
+
 import datas from "./routes/Api/data.js"
 import faq from "./routes/Api/faq.js"
 import reviews from "./routes/Api/reviews.js"
@@ -35,6 +37,7 @@ app.use('/', reviews)
 app.use('/', contactroute)
 app.use('/', detailroute)
 app.use('/', Inquiryroute)
+app.use('/', newsletterroute)
 
 
 
