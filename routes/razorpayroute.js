@@ -10,7 +10,8 @@ const razorpay = new Razorpay({
     key_secret: process.env.RAZORPAY_KEY_SECRET,
   });
 
-app.post("/razorpay", async (req, res) => {
+  export default async function app(req, res) {
+    if (req.method === "POST") {
     const { amount } = req.body;
   
     const options = {
@@ -23,7 +24,7 @@ app.post("/razorpay", async (req, res) => {
     try {
       const response = await razorpay.orders.create(options);
       console.log(response)
-      res.json({
+      res.status(200).json({
         success: true,
         id: response.id,
         currency: response.currency
@@ -31,7 +32,10 @@ app.post("/razorpay", async (req, res) => {
     } catch (error) {
       console.error(error);
       res.status(500).json({ success: false, error: 'Please try again' });
+    }}
+    else {
+      res.setHeader("Allow", ["POST"]);
+      res.status(405).end(`Method ${req.method} Not Allowed`);
     }
-  });
+  };
   
-  export default app
