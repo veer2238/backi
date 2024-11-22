@@ -39,3 +39,4 @@ const razorpay = new Razorpay({
     }
   };
   
+  export { app, handler };
