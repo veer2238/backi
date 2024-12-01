@@ -4,12 +4,10 @@ import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 
 dotenv.config();
-const app = express.Router();
+const app = express();
 
 app.post('/contact', async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');  // Allow all origins
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+   
     try {
         const { name, email, message } = req.body;
 
@@ -46,7 +44,7 @@ app.post('/contact', async (req, res) => {
         const info = await transporter.sendMail(mailOptions);
         console.log('Email sent:', info.response);
 
-        res.json({ success: true, message: 'Thanks for contacting' });
+        res.json({ success: true, message: 'Thanks for contacting,we will get back to you soon.' });
         console.log(result);
 
     } catch (error) {
@@ -56,9 +54,7 @@ app.post('/contact', async (req, res) => {
 });
 
 app.get('/contacts', async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');  // Allow all origins
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+   
     try {
         const contacts = await Contact.find();
 
